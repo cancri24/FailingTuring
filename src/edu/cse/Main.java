@@ -1,11 +1,7 @@
 package edu.cse;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
