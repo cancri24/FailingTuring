@@ -1,7 +1,10 @@
 package edu.cse;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -25,6 +28,14 @@ public class Main extends Application {
         textstuff.getChildren().add(botTalk);
         textstuff.getChildren().add(sayThings);
         Scene theScene = new Scene(textstuff, 300, 300);
+
+        sayThings.setOnKeyPressed((event) -> {
+            if (event.getCode().equals(KeyCode.ENTER)) {
+                youTalk.setText(yousaid + sayThings.getText());
+                botTalk.setText(botsaid + talkbeans);
+                sayThings.setText("");
+            }
+        });
 
         theStage.setScene(theScene);
         theStage.setTitle("I am not a bot.");
